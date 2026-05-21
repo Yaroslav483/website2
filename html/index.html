@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Union Auto Trade — Premium Cars from Ukraine</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header__topbar">
+      <div class="container header__topbar-inner">
+        <div class="header__lang">
+          <span class="active">English</span>
+          <span class="divider">|</span>
+          <span>Українська</span>
+          <span class="divider">|</span>
+          <span>Currency: UAH <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></span>
+        </div>
+        <button class="btn btn--primary btn--sm">Request a callback</button>
+      </div>
+    </div>
+    <nav class="header__nav">
+      <div class="container header__nav-inner">
+        <a href="index.html" class="header__logo">
+          <img src="assets/logo.png" alt="Union Auto Trade">
+        </a>
+        <ul class="header__menu">
+          <li><a href="catalog.html">FOR SALE</a></li>
+          <li><a href="#">AUTOPARTS</a></li>
+          <li><a href="#">SERVICING</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero__bg">
+        <img src="assets/cars1.png" alt="Car lot" />
+        <div class="hero__overlay"></div>
+      </div>
+      <div class="container hero__content">
+        <h1 class="hero__title">
+          FIND YOUR NEXT CAR<br/>
+          <span>PREMIUM CARS FROM Ukraine</span>
+        </h1>
+        <a href="catalog.html" class="btn btn--primary hero__cta">LET'S GO</a>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES GRID ===== -->
+    <section class="services section">
+      <div class="container services__grid">
+        <a href="catalog.html" class="services__card services__card--large">
+          <img src="assets/gelik.png" alt="Cars for sale" />
+          <div class="services__card-label">CARS FOR SALE</div>
+          <span class="services__card-more">MORE</span>
+        </a>
+        <div class="services__col">
+          <a href="#" class="services__card">
+            <img src="assets/diski.png" alt="Autoparts" />
+            <div class="services__card-label">AUTOPARTS</div>
+            <span class="services__card-more">MORE</span>
+          </a>
+          <a href="#" class="services__card">
+            <img src="assets/fari.png" alt="Servicing" />
+            <div class="services__card-label">SERVICING</div>
+            <span class="services__card-more">MORE</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CHOOSE YOUR VEHICLE ===== -->
+    <section class="choose section">
+      <div class="container">
+        <h2 class="section-title">CHOOSE YOUR VEHICLE</h2>
+        <div class="choose__tabs">
+          <button class="choose__tab active" data-tab="body">BODY TYPE</button>
+          <button class="choose__tab" data-tab="brand">BRAND</button>
+        </div>
+
+        <!-- Body Type Tab -->
+        <div class="choose__panel active" id="tab-body">
+          <div class="choose__items">
+            <a href="catalog.html" class="choose__item">
+              <img src="assets/image5.png" alt="SUV" />
+              <span>SUV</span>
+            </a>
+            <a href="catalog.html" class="choose__item">
+              <img src="assets/image4.png" alt="Sedan" />
+              <span>Sedan</span>
+            </a>
+            <a href="catalog.html" class="choose__item">
+              <img src="assets/body-sedan.png" alt="Wagon" />
+              <span>Wagon</span>
+            </a>
+            <a href="catalog.html" class="choose__item">
+              <img src="assets/image 4 (2).png" alt="Hatchback" />
+              <span>Hatchback</span>
+            </a>
+            <a href="catalog.html" class="choose__item">
+              <img src="assets/image 4 (3).png" alt="Pickup" />
+              <span>Pickup</span>
+            </a>
+            <a href="catalog.html" class="choose__item">
+              <img src="assets/convertible.png" alt="Convertible" />
+              <span>Minivan</span>
+            </a>
+          </div>
+          <a href="catalog.html" class="btn btn--outline choose__showall">Show all</a>
+        </div>
+
+        <!-- Brand Tab -->
+        <div class="choose__panel" id="tab-brand">
+          <div class="choose__items">
+            <a href="catalog.html" class="choose__item choose__item--brand">
+              <img src="assets/image 5 (2).png" alt="Lexus" />
+              <span>Lexus</span>
+            </a>
+            <a href="catalog.html" class="choose__item choose__item--brand">
+              <img src="assets/image 5 (5).png" alt="Mitsubishi" />
+              <span>Mitsubishi</span>
+            </a>
+          </div>
+          <a href="catalog.html" class="btn btn--outline choose__showall">Show all</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOT DEALS ===== -->
+    <section class="hot-deals section">
+      <div class="container">
+        <h2 class="section-title">HOT DEALS</h2>
+        <div class="cards-grid">
+
+          <!-- Car Card -->
+          <a href="product.html" class="car-card">
+            <div class="car-card__badge">NEW</div>
+            <div class="car-card__name">Lexus LX LX500d</div>
+            <div class="car-card__year">2022</div>
+            <img class="car-card__img" src="assets/car-lexus-lx.png" alt="Lexus LX LX500d" />
+            <div class="car-card__specs">
+              <span><svg class="icon" viewBox="0 0 16 16"><use href="assets/icons.png#engine"/></svg> 5.7 L</span>
+              <span><svg class="icon" viewBox="0 0 16 16"><use href="assets/icons.png#drive"/></svg> AWD</span>
+              <span><svg class="icon" viewBox="0 0 16 16"><use href="assets/icons.png#body"/></svg> SUV</span>
+            </div>
+            <div class="car-card__price">4 848 436 UAH</div>
+          </a>
+
+          <a href="product.html" class="car-card">
+            <div class="car-card__badge">NEW</div>
+            <div class="car-card__name">Mitsubishi Pajero Sport GLX</div>
+            <div class="car-card__year">2023</div>
+            <img class="car-card__img" src="assets/pajero.png" alt="Mitsubishi Pajero Sport GLX" />
+            <div class="car-card__specs">
+              <span><svg class="icon" viewBox="0 0 16 16"><use href="assets/icons.png#engine"/></svg> 2.4 L</span>
+              <span><svg class="icon" viewBox="0 0 16 16"><use href="assets/icons.png#drive"/></svg> AWD</span>
+              <span><svg class="icon" viewBox="0 0 16 16"><use href="assets/icons.png#body"/></svg> SUV</span>
+            </div>
+            <div class="car-card__price">1 662 430 UAH</div>
+          </a>
+
+          <a href="product.html" class="car-card">
+            <div class="car-card__badge">NEW</div>
+            <div class="car-card__name">Lexus UX UX200 Luxury</div>
+            <div class="car-card__year">2022</div>
+            <img class="car-card__img" src="assets/car-lexus-ux.png" alt="Lexus UX UX200 Luxury" />
+            <div class="car-card__specs">
+              <span><svg class="icon" viewBox="0 0 16 16"><use href="assets/icons.png#engine"/></svg> 2.0 L</span>
+              <span><svg class="icon" viewBox="0 0 16 16"><use href="assets/icons.png#drive"/></svg> AWD</span>
+              <span><svg class="icon" viewBox="0 0 16 16"><use href="assets/icons.png#body"/></svg> SUV</span>
+            </div>
+            <div class="car-card__price">1 450 000 UAH</div>
+          </a>
+
+          <a href="product.html" class="car-card">
+            <div class="car-card__badge">NEW</div>
+            <div class="car-card__name">Mercedes-Benz G-Class</div>
+            <div class="car-card__year">2022</div>
+            <img class="car-card__img" src="assets/car-mercedes-g.png" alt="Mercedes-Benz G-Class" />
+            <div class="car-card__specs">
+              <span><svg class="icon" viewBox="0 0 16 16"><use href="assets/icons.png#engine"/></svg> 4.0 L</span>
+              <span><svg class="icon" viewBox="0 0 16 16"><use href="assets/icons.png#drive"/></svg> AWD</span>
+              <span><svg class="icon" viewBox="0 0 16 16"><use href="assets/icons.png#body"/></svg> SUV</span>
+            </div>
+            <div class="car-card__price">9 093 000 UAH</div>
+          </a>
+
+          <!-- Row 2 (repeat pattern) -->
+          <a href="product.html" class="car-card">
+            <div class="car-card__badge">NEW</div>
+            <div class="car-card__name">Lexus LX LX500d</div>
+            <div class="car-card__year">2022</div>
+            <img class="car-card__img" src="assets/car-lexus-lx.png" alt="Lexus LX LX500d" />
+            <div class="car-card__specs">
+              <span>5.7 L</span><span>AWD</span><span>SUV</span>
+            </div>
+            <div class="car-card__price">4 848 436 UAH</div>
+          </a>
+          <a href="product.html" class="car-card">
+            <div class="car-card__badge">NEW</div>
+            <div class="car-card__name">Mitsubishi Pajero Sport GLX</div>
+            <div class="car-card__year">2023</div>
+            <img class="car-card__img" src="assets/pajero.png" alt="Mitsubishi Pajero Sport GLX" />
+            <div class="car-card__specs">
+              <span>2.4 L</span><span>AWD</span><span>SUV</span>
+            </div>
+            <div class="car-card__price">1 662 430 UAH</div>
+          </a>
+          <a href="product.html" class="car-card">
+            <div class="car-card__badge">NEW</div>
+            <div class="car-card__name">Lexus UX UX200 Luxury</div>
+            <div class="car-card__year">2022</div>
+            <img class="car-card__img" src="assets/car-lexus-ux.png" alt="Lexus UX UX200 Luxury" />
+            <div class="car-card__specs">
+              <span>2.0 L</span><span>AWD</span><span>SUV</span>
+            </div>
+            <div class="car-card__price">1 450 000 UAH</div>
+          </a>
+          <a href="product.html" class="car-card">
+            <div class="car-card__badge">NEW</div>
+            <div class="car-card__name">Mercedes-Benz G-Class</div>
+            <div class="car-card__year">2022</div>
+            <img class="car-card__img" src="assets/car-mercedes-g.png" alt="Mercedes-Benz G-Class" />
+            <div class="car-card__specs">
+              <span>4.0 L</span><span>AWD</span><span>SUV</span>
+            </div>
+            <div class="car-card__price">9 093 000 UAH</div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROMO BANNER ===== -->
+    <section class="promo-banner">
+      <img src="assets/promo-bmw.png" alt="BMW M5" />
+    </section>
+
+    <!-- ===== HOW TO BUY ===== -->
+    <section class="how-to-buy section">
+      <div class="container">
+        <h2 class="section-title">КАК КУПИТЬ АВТОМОБИЛЬ С ДОСТАВКОЙ<br/>В УКРАИНУ</h2>
+        <div class="how-to-buy__steps">
+          <div class="how-to-buy__step">
+            <div class="how-to-buy__num">1</div>
+            <h3>ЗАЯВКА</h3>
+            <p>Вы звоните нам или оставляете заявку на сайте и с Вами связывается наш менеджер.</p>
+          </div>
+          <div class="how-to-buy__step">
+            <div class="how-to-buy__num">2</div>
+            <h3>ДОГОВОР</h3>
+            <p>Согласовываем автомобиль, условия работы и подписываем договор. Вносите предоплату.</p>
+          </div>
+          <div class="how-to-buy__step">
+            <div class="how-to-buy__num">3</div>
+            <h3>ОПЛАТА</h3>
+            <p>После подписания договора, выставляется инвойс за автомобиль.</p>
+          </div>
+          <div class="how-to-buy__step">
+            <div class="how-to-buy__num">4</div>
+            <h3>ДОСТАВКА</h3>
+            <p>Ожидайте от 30 до 60 дней (зависит от заказа и пункта назначения).</p>
+          </div>
+          <div class="how-to-buy__step how-to-buy__step--cta">
+            <div class="how-to-buy__num">5</div>
+            <h3>ОТПРАВИТЬ ЗАПРОС</h3>
+            <p>Оставьте контактные данные и мы обязательно свяжемся с вами</p>
+            <button class="btn btn--primary">ОСТАВИТЬ ЗАЯВКУ</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT BANNER ===== -->
+    <section class="about-banner">
+      <img src="assets/about-audi.png" alt="Audi" class="about-banner__bg" />
+      <div class="about-banner__overlay"></div>
+      <div class="container about-banner__grid">
+        <div class="about-banner__item">
+          <h3>ПОКУПКА АВТОМОБИЛЯ</h3>
+          <p>Мы помогаем клиентам покупать автомобили и индивидуально подбираем...</p>
+        </div>
+        <div class="about-banner__item">
+          <h3>ИНДИВИДУАЛЬНЫЙ ПОДХОД</h3>
+          <p>К каждому клиенту даем услуги дополнительно и индивидуально...</p>
+        </div>
+        <div class="about-banner__item">
+          <h3>ОПЫТ И НАДЕЖНОСТЬ</h3>
+          <p>Более 5 лет безупречной репутации в сфере импорта автомобилей...</p>
+        </div>
+        <div class="about-banner__item">
+          <h3>СОТРУДНИЧЕСТВО С НАМИ</h3>
+          <p>Твердая репутация и надежный партнер в автомобильном бизнесе...</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__top">
+      <div class="footer__brand">
+        <img src="assets/uat trade 2 3.png" alt="UAT" class="footer__logo" />
+        <p>Buy, autoparts or service premium cars from Ukraine</p>
+      </div>
+      <div class="footer__contact">
+        <p>Call the office at:</p>
+        <a href="tel:+380955596232" class="footer__phone">+ 380 95 55 96 232</a>
+        <div class="footer__socials">
+          <a href="#" class="footer__social"><img src="assets/whatsapp 1.png" alt="WhatsApp" /></a>
+          <a href="#" class="footer__social"><img src="assets/color.png" alt="Facebook" /></a>
+          <a href="#" class="footer__social"><img src="assets/instagram.png" alt="Instagram" /></a>
+          <a href="#" class="footer__social"><img src="assets/telegram 1.png" alt="Telegram" /></a>
+        </div>
+        <p class="footer__address">Our address: Kyiv, Ukraine</p>
+      </div>
+      <button class="btn btn--primary">Request a callback</button>
+    </div>
+    <div class="container footer__nav">
+      <a href="catalog.html">FOR SALE</a>
+      <a href="#">AUTOPARTS</a>
+      <a href="#">SERVICING</a>
+      <a href="#">ABOUT US</a>
+    </div>
+    <div class="container footer__payments">
+      <span class="footer__payment"><img src="assets/image 7.png" alt="Invoice" /> INVOICE</span>
+      <span class="footer__payment"><img src="assets/tether.png" alt="USDT" /> USDT</span>
+      <span class="footer__payment"><img src="assets/image 9.png" alt="Cash" /> CASH</span>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Union Auto Trade</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+</body>
+</html>

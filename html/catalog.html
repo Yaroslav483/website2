@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Sale — Union Auto Trade</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/catalog.css" />
+</head>
+<body>
+
+  <!-- HEADER (same as index) -->
+  <header class="header">
+    <div class="header__topbar">
+      <div class="container header__topbar-inner">
+        <div class="header__lang">
+          <span class="active">English</span>
+          <span class="divider">|</span>
+          <span>Currency: UAH <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></span>
+        </div>
+        <button class="btn btn--primary btn--sm">Request a callback</button>
+      </div>
+    </div>
+    <nav class="header__nav">
+      <div class="container header__nav-inner">
+        <a href="index.html" class="header__logo">
+          <img src="assets/logo.png" alt="Union Auto Trade" />
+        </a>
+        <ul class="header__menu">
+          <li><a href="catalog.html" class="active">FOR SALE</a></li>
+          <li><a href="#">AUTOPARTS</a></li>
+          <li><a href="#">SERVICING</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CATALOG HERO -->
+  <section class="catalog-hero">
+    <div class="catalog-hero__bg">
+      <img src="assets/cars1.png" alt="Cars" />
+      <div class="catalog-hero__overlay"></div>
+    </div>
+    <div class="container catalog-hero__content">
+      <h1>FIND YOUR NEXT CAR<br/><span>PREMIUM CARS FROM UKRAINE</span></h1>
+    </div>
+  </section>
+
+  <!-- CATALOG LAYOUT -->
+  <section class="catalog section">
+    <div class="container catalog__layout">
+
+      <!-- SIDEBAR FILTERS -->
+      <aside class="catalog__sidebar">
+
+        <div class="filter-group">
+          <label class="filter-label">Sort by</label>
+          <select class="filter-select">
+            <option>Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Newest</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">Price</label>
+          <div class="filter-range">
+            <input type="number" placeholder="Min" class="filter-input" />
+            <span>—</span>
+            <input type="number" placeholder="Max" class="filter-input" />
+          </div>
+          <p class="filter-hint">Prices based on 3000</p>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">Lifestyles</label>
+          <div class="filter-tags">
+            <button class="filter-tag">Family/Family</button>
+            <button class="filter-tag">First Car</button>
+            <button class="filter-tag">Electric</button>
+            <button class="filter-tag">Hybrid</button>
+            <button class="filter-tag">Offroad 4×4</button>
+            <button class="filter-tag">Tradie</button>
+            <button class="filter-tag">Performance</button>
+            <button class="filter-tag">Prestige</button>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">Deals</label>
+          <div class="filter-checkbox">
+            <input type="checkbox" id="all-deals" />
+            <label for="all-deals">All deals</label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">Body type</label>
+          <div class="filter-body-types">
+            <button class="filter-body active"><img src="assets/image 4 (2).png" alt="SUV" /></button>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">Makes</label>
+          <div class="filter-makes">
+            <button class="filter-make">
+              <img src="assets/Rectangle 46 (23).png" alt="Lexus" />
+              <span>Lexus</span>
+            </button>
+            <button class="filter-make">
+              <img src="assets/image 5 (5).png"alt="Mitsubishi" />
+              <span>Mitsubishi</span>
+            </button>
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- CARDS GRID -->
+      <div class="catalog__main">
+        <div class="cards-grid cards-grid--3">
+
+          <a href="product.html" class="car-card" data-lifestyles="Prestige,Family/Family">
+
+            <div class="car-card__badge">NEW</div>
+
+            <div class="car-card__name">Lexus LX LX500d</div>
+
+            <div class="car-card__year">2022</div>
+            <img class="car-card__img" src="assets/car-lexus-lx.png" alt="Lexus LX LX500d" />
+            <div class="car-card__specs">
+              <span>5.7 L</span><span>AWD</span><span>SUV</span>
+            </div>
+            <div class="car-card__price">4 848 436 UAH</div>
+          </a>
+
+          <a href="product.html" class="car-card" data-lifestyles="Prestige,Family/Family">
+
+            <div class="car-card__badge">NEW</div>
+
+            <div class="car-card__name">Mitsubishi Pajero Sport GLX</div>
+            <div class="car-card__year">2023</div>
+            <img class="car-card__img" src="assets/pajero.png" alt="Mitsubishi Pajero Sport GLX" />
+
+            <div class="car-card__specs">
+              <span>2.4 L</span><span>AWD</span><span>SUV</span>
+            </div>
+            <div class="car-card__price">1 662 430 UAH</div>
+          </a>
+
+          <a href="product.html" class="car-card" data-lifestyles="Prestige,Hybrid,Performance">
+            <div class="car-card__badge">NEW</div>
+            <div class="car-card__name">Lexus UX UX200 Luxury</div>
+            <div class="car-card__year">2022</div>
+            <img class="car-card__img" src="assets/car-lexus-ux.png" alt="Lexus UX UX200 Luxury" />
+
+            <div class="car-card__specs">
+              <span>2.0 L</span><span>AWD</span><span>SUV</span>
+            </div>
+            <div class="car-card__price">1 450 000 UAH</div>
+          </a>
+
+          <!-- Repeat cards as needed -->
+          <a href="product.html" class="car-card" data-lifestyles="First Car,Offroad 4×4">
+
+
+            <div class="car-card__badge">NEW</div>
+
+            <div class="car-card__name">Lexus LX LX500d</div>
+            <div class="car-card__year">2022</div>
+            <img class="car-card__img" src="assets/car-lexus-lx.png" alt="Lexus LX LX500d" />
+            <div class="car-card__specs"><span>5.7 L</span><span>AWD</span><span>SUV</span></div>
+            <div class="car-card__price">4 848 436 UAH</div>
+          </a>
+          <a href="product.html" class="car-card">
+            <div class="car-card__badge">NEW</div>
+            <div class="car-card__name">Mitsubishi Pajero Sport GLX</div>
+            <div class="car-card__year">2023</div>
+            <img class="car-card__img" src="assets/pajero.png" alt="Mitsubishi Pajero" />
+            <div class="car-card__specs"><span>2.4 L</span><span>AWD</span><span>SUV</span></div>
+            <div class="car-card__price">1 662 430 UAH</div>
+          </a>
+          <a href="product.html" class="car-card">
+            <div class="car-card__badge">NEW</div>
+            <div class="car-card__name">Lexus UX UX200 Luxury</div>
+            <div class="car-card__year">2022</div>
+            <img class="car-card__img" src="assets/car-lexus-ux.png" alt="Lexus UX" />
+            <div class="car-card__specs"><span>2.0 L</span><span>AWD</span><span>SUV</span></div>
+            <div class="car-card__price">1 450 000 UAH</div>
+          </a>
+          <a href="product.html" class="car-card" data-lifestyles="Prestige,Family/Family">
+            <div class="car-card__badge">NEW</div>
+            <div class="car-card__name">Lexus LX LX500d</div>
+
+            <div class="car-card__year">2022</div>
+            <img class="car-card__img" src="assets/car-lexus-lx.png" alt="Lexus LX" />
+            <div class="car-card__specs"><span>5.7 L</span><span>AWD</span><span>SUV</span></div>
+            <div class="car-card__price">4 848 436 UAH</div>
+          </a>
+          <a href="product.html" class="car-card">
+            <div class="car-card__badge">NEW</div>
+            <div class="car-card__name">Mitsubishi Pajero Sport GLX</div>
+            <div class="car-card__year">2023</div>
+            <img class="car-card__img" src="assets/pajero.png" alt="Mitsubishi" />
+            <div class="car-card__specs"><span>2.4 L</span><span>AWD</span><span>SUV</span></div>
+            <div class="car-card__price">1 662 430 UAH</div>
+          </a>
+          <a href="product.html" class="car-card">
+            <div class="car-card__badge">NEW</div>
+            <div class="car-card__name">Lexus UX UX200 Luxury</div>
+            <div class="car-card__year">2022</div>
+            <img class="car-card__img" src="assets/car-lexus-ux.png" alt="Lexus" />
+            <div class="car-card__specs"><span>2.0 L</span><span>AWD</span><span>SUV</span></div>
+            <div class="car-card__price">1 450 000 UAH</div>
+          </a>
+
+        </div>
+
+        <!-- PAGINATION -->
+        <div class="pagination">
+          <button class="pagination__btn" disabled>&#8249;</button>
+          <button class="pagination__btn active">1</button>
+          <button class="pagination__btn">2</button>
+          <button class="pagination__btn">3</button>
+          <button class="pagination__btn">4</button>
+          <button class="pagination__btn">&#8250;</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__top">
+      <div class="footer__brand">
+        <img src="assets/uat trade 2 3.png" alt="UAT" class="footer__logo" />
+        <p>Buy, autoparts or service premium cars from Ukraine</p>
+      </div>
+      <div class="footer__contact">
+        <p>Call the office at:</p>
+        <a href="tel:+380955596232" class="footer__phone">+ 380 95 55 96 232</a>
+        <div class="footer__socials">
+          <a href="#"><img src="assets/whatsapp 1.png" alt="WhatsApp" /></a>
+          <a href="#"><img src="assets/color.png" alt="Facebook" /></a>
+          <a href="#"><img src="assets/instagram.png" alt="Instagram" /></a>
+          <a href="#"><img src="assets/telegram 1.png" alt="Telegram" /></a>
+        </div>
+        <p class="footer__address">Our address: Kyiv, Ukraine</p>
+      </div>
+      <button class="btn btn--primary">Request a callback</button>
+    </div>
+    <div class="container footer__nav">
+      <a href="catalog.html">FOR SALE</a>
+      <a href="#">AUTOPARTS</a>
+      <a href="#">SERVICING</a>
+      <a href="#">ABOUT US</a>
+    </div>
+    <div class="container footer__payments">
+       <span class="footer__payment"><img src="assets/image 7.png" alt="Invoice" /> INVOICE</span>
+      <span class="footer__payment"><img src="assets/tether.png" alt="USDT" /> USDT</span>
+      <span class="footer__payment"><img src="assets/image 9.png" alt="Cash" /> CASH</span>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026Union Auto Trade</p>
+      <div>
+        
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+
+</body>
+</html>
