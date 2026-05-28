@@ -63,13 +63,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const filterSelect = document.querySelector('.filter-select');
   const minInput = document.querySelector('.filter-input[placeholder="Min"], .filter-input[placeholder="Мин"]');
   const maxInput = document.querySelector('.filter-input[placeholder="Max"], .filter-input[placeholder="Макс"]');
+  const dealsInput = document.getElementById('all-deals');
 
 
   const helper = {
     text(el) {
       return (el?.textContent || '').trim();
+    },
+    normalize(value) {
+      return (value || '').toString().trim().toLowerCase();
     }
   };
+
+  const makeOptions = Array.from(filterMakes)
+    .map(btn => helper.text(btn.querySelector('span')))
+    .filter(Boolean);
 
   function getCardName(card) {
     return helper.text(card.querySelector('.car-card__name'));
@@ -82,6 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function getCardBodyType(card) {
+    if (card.dataset?.body) return card.dataset.body;
+
     const specs = card.querySelector('.car-card__specs');
     if (!specs) return null;
     const spans = specs.querySelectorAll('span');
@@ -89,28 +99,22 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function getCardMake(card) {
+    if (card.dataset?.make) return card.dataset.make;
+
     const name = getCardName(card);
     if (!name) return null;
-    if (/^Lexus\b/i.test(name)) return 'Lexus';
-    if (/^Mitsubishi\b/i.test(name)) return 'Mitsubishi';
-    return null;
+
+    const normalizedName = helper.normalize(name);
+    return makeOptions.find(make => normalizedName.startsWith(helper.normalize(make))) || null;
   }
 
   function getActiveBodyType() {
-    
-    if (!userSelectedBodyType) return null;
-
     const activeBtn = Array.from(filterBodies).find(b => b.classList.contains('active'));
-    return activeBtn?.querySelector('img')?.getAttribute('alt')?.trim() || null;
-  }
+    if (!activeBtn) return null;
 
-
-
-  let userSelectedBodyType = false;
-
- 
-  function isCatalogFilterEmpty() {
-    return !userSelectedBodyType;
+    return activeBtn.dataset.body ||
+      activeBtn?.querySelector('img')?.getAttribute('alt')?.trim() ||
+      helper.text(activeBtn);
   }
 
 
@@ -130,10 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
  
   function matchesLifestyles(card) {
-    const active = Array.from(filterTags)
-      .filter(b => b.classList.contains('active'))
-      .map(b => helper.text(b).toString().trim())
-      .filter(Boolean);
+    const active = getActiveLifestyles();
 
     if (active.length === 0) return true;
 
@@ -144,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .map(s => s.trim().toLowerCase())
         .filter(Boolean);
 
-      return active.some(a => cardLifestyles.includes(a.toLowerCase()));
+      return active.some(a => cardLifestyles.includes(helper.normalize(a)));
     }
 
     
@@ -156,13 +157,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   function matchesPrice(card) {
+    const minRaw = (minInput?.value ?? '').toString().trim();
+    const maxRaw = (maxInput?.value ?? '').toString().trim();
+
+    if (minRaw === '' && maxRaw === '') return true;
 
     const price = getCardPriceUAH(card);
     if (Number.isNaN(price)) return false;
-
-
-    const minRaw = (minInput?.value ?? '').toString().trim();
-    const maxRaw = (maxInput?.value ?? '').toString().trim();
 
    
     const min = minRaw === '' ? NaN : Number(minRaw);
@@ -175,20 +176,26 @@ document.addEventListener('DOMContentLoaded', () => {
     return minOk && maxOk;
   }
 
+  function matchesDeals(card) {
+    if (!dealsInput?.checked) return true;
+
+    return card.dataset?.deal !== 'false' && Boolean(card.querySelector('.car-card__badge'));
+  }
+
   function matchesMakes(card) {
     const active = getActiveMakes();
     if (active.length === 0) return true;
 
     const make = getCardMake(card);
    
-    if (!make) return true;
+    if (!make) return false;
 
     return active.includes(make);
   }
 
 
   function normalizeBodyType(str) {
-    return (str || '').toString().trim().toUpperCase();
+    return helper.normalize(str);
   }
 
   function matchesBody(card) {
@@ -229,19 +236,12 @@ document.addEventListener('DOMContentLoaded', () => {
   function applyAll() {
     if (!cardsGrid || cards.length === 0) return;
 
-    if (isCatalogFilterEmpty()) {
-      cards.forEach(card => {
-        card.style.display = '';
-      });
-      sortCards();
-      return;
-    }
-
     cards.forEach(card => {
       const ok =
         matchesBody(card) &&
         matchesPrice(card) &&
         matchesLifestyles(card) &&
+        matchesDeals(card) &&
         matchesMakes(card);
 
       card.style.display = ok ? '' : 'none';
@@ -255,7 +255,6 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => {
       filterBodies.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      userSelectedBodyType = true;
       applyAll();
     });
   });
@@ -277,11 +276,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   minInput?.addEventListener('input', applyAll);
   maxInput?.addEventListener('input', applyAll);
+  dealsInput?.addEventListener('change', applyAll);
   filterSelect?.addEventListener('change', applyAll);
 
   applyAll();
-
-  sortCards();
 
 });
 
