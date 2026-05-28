@@ -3,13 +3,32 @@ const express = require('express');
 
 const app = express();
 
-// Папка с вашим фронтендом (каталог/индекс/продукт и assets)
-const publicDir = path.join(__dirname, 'files');
+// корень проекта (files)
+const root = __dirname;
 
-app.use(express.static(publicDir));
+// статика (css, js, assets, html)
+app.use(express.static(root));
+
+// главная страница
+app.get('/', (req, res) => {
+  res.sendFile(path.join(root, 'html', 'index.html'));
+});
+
+// каталог
+app.get('/catalog', (req, res) => {
+  res.sendFile(path.join(root, 'html', 'catalog.html'));
+});
+
+// продукт
+app.get('/product', (req, res) => {
+  res.sendFile(path.join(root, 'html', 'product.html'));
+});
 
 const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+
+
 
