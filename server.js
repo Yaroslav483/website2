@@ -3,32 +3,30 @@ const express = require('express');
 
 const app = express();
 
+const publicRoot = path.join(__dirname, 'files');
 
-const root = __dirname;
 
-
-app.use(express.static(root));
+app.use(express.static(publicRoot));
 
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(root, 'html', 'index.html'));
+  res.sendFile(path.join(publicRoot, 'html', 'index.html'));
 });
 
+app.get('/:page', (req, res) => {
+  let page = req.params.page;
 
-app.get('/catalog', (req, res) => {
-  res.sendFile(path.join(root, 'html', 'catalog.html'));
+  if (!page.endsWith('.html')) {
+    page += '.html';
+  }
+
+  res.sendFile(
+    path.join(publicRoot, 'html', page)
+  );
 });
 
-
-app.get('/product', (req, res) => {
-  res.sendFile(path.join(root, 'html', 'product.html'));
-});
-
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
-
-
-
